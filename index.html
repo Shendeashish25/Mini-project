@@ -12,6 +12,12 @@ background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
 min-height: 100vh;
 
 }
+.bodyyy{
+    background-color: #08AEEA;
+background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+min-height: 100vh;
+
+}
 
 .container
 {
@@ -51,7 +57,25 @@ margin: 45px 0;
     }
 
 
+    .img-container{
+position: fixed;
+top: 20px;
+     right: 30px;
 
+    }
+    .img-light{
+     margin: 10px 10px;
+    height: 40px;
+    cursor: pointer;
+    }
+
+    .dark{
+        background-color: #033853;
+background-image: linear-gradient(160deg, #033853 0%, #0c2929 100%);
+min-height: 100vh;
+        
+    }
+.
 
 
     @media screen and (min-width:344px ) (max-width: 701px) 
@@ -67,6 +91,7 @@ margin: 45px 0;
             width: 100%;
         
         }
+    
 
     }
     
@@ -75,7 +100,9 @@ margin: 45px 0;
 
 
 </head>
-<body>
+<body id="body">
+
+
      
 <div class="container"> 
     <img src="" class="img-box" id="img"/>
@@ -89,10 +116,49 @@ margin: 45px 0;
 
 </div>
 
+</div>
 
 
+<div class="img-container">
+
+    <img src="day-mode.png" class="img-light" id="img-light" onclick="lightMode()"/>
+    <img src="day-mode (2).png" class="img-light" id="img-night" onclick="darktMode()"/>
+    
 
 <script>
+
+function  lightMode()
+{
+const lightModeOn=document.getElementById("img-light");
+
+lightModeOn.src= "day-mode (1).png"
+
+
+const darkModeOn=document.getElementById("img-night");
+darkModeOn.src=`day-mode (2).png`
+
+
+
+const bodybg=document.getElementById(`body`);
+bodybg.className=`bodyyy`
+}
+
+
+function  darktMode()
+{
+const nightModeOn=document.getElementById("img-night");
+
+nightModeOn.src= "brightness.png"
+
+const lightModeOn=document.getElementById("img-light");
+lightModeOn.src=`day-mode.png`
+
+const bodybg=document.getElementById(`body`);
+bodybg.className=`dark`
+
+}
+
+
 
 function changePic()
 {
